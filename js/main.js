@@ -1,3 +1,5 @@
+const warningImgPath = './Images/warning.svg';
+
 var objappVersion = navigator.appVersion;
 var objAgent = navigator.userAgent;
 var objbrowserName = navigator.appName;
@@ -27,6 +29,10 @@ else if ((objOffsetVersion = objAgent.indexOf('Safari')) != -1) {
   if ((objOffsetVersion = objAgent.indexOf('Version')) != -1)
     objfullVersion = objAgent.substring(objOffsetVersion + 8);
 }
+// In Edge
+else if ((objOffsetVersion = objAgent.indexOf('Edge')) != -1) {
+  objbrowserName = 'Edge';
+}
 // For other browser "name/version" is at the end of userAgent
 else if (
   (objOffsetName = objAgent.lastIndexOf(' ') + 1) <
@@ -50,21 +56,41 @@ if (isNaN(objBrMajorVersion)) {
   objBrMajorVersion = parseInt(navigator.appVersion, 10);
 }
 
-document.write(
-  '' +
-    'Browser name  = ' +
-    objbrowserName +
-    '<br>' +
-    'Full version  = ' +
-    objfullVersion +
-    '<br>' +
-    'Major version = ' +
-    objBrMajorVersion +
-    '<br>' +
-    'navigator.appName = ' +
-    navigator.appName +
-    '<br>' +
-    'navigator.userAgent = ' +
-    navigator.userAgent +
-    '<br>'
-);
+let browserAlertNode = document.getElementById(objbrowserName);
+
+let versionElement = document.createElement('span');
+versionElement.className = 'label warning';
+
+let imageTag = document.createElement('img');
+imageTag.setAttribute('id', 'Img');
+imageTag.setAttribute('src', warningImgPath);
+imageTag.setAttribute('alt', 'warning');
+imageTag.setAttribute('style', 'width:12%');
+
+versionElement.appendChild(imageTag);
+
+let textNode = document.createElement('h5');
+textNode.innerText = ` Your Version ${objBrMajorVersion}+`;
+
+versionElement.appendChild(textNode);
+
+browserAlertNode.appendChild(versionElement);
+
+// document.write(
+//   '' +
+//     'Browser name  = ' +
+//     objbrowserName +
+//     '<br>' +
+//     // 'Full version  = ' +
+//     // objfullVersion +
+//     // '<br>' +
+//     'Major version = ' +
+//     objBrMajorVersion
+//   // '<br>' +
+//   // 'navigator.appName = ' +
+//   // navigator.appName +
+//   // '<br>' +
+//   // 'navigator.userAgent = ' +
+//   // navigator.userAgent +
+//   // '<br>'
+// );

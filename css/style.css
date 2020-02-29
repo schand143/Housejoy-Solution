@@ -8,7 +8,8 @@ img {
 #warning {
   width: 12em;
   position: relative;
-  margin-left: 10vw;
+  margin-left: 30%;
+  margin-top: inherit;
 }
 
 #text {
@@ -23,7 +24,7 @@ img {
 #notfound .notfound {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 45%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -108,19 +109,19 @@ div.desc {
 }
 
 h5 {
-  color: white;
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   border-radius: 16px;
-  background-color: #ff9900b0;
+  background-color: #ffad33;
   max-width: 150px;
   /* text-align: center; */
   float: none;
   padding: 7px;
-  /* opacity: 0.5; */
+  /* opacity: 0.8; */
 }
 
 #Img {
-  margin-top: -1px;
+  margin-top: 10px;
+  margin-left: 5px;
   float: left;
-  opacity: 25;
 }

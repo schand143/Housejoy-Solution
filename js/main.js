@@ -76,21 +76,4 @@ versionElement.appendChild(textNode);
 
 browserAlertNode.appendChild(versionElement);
 
-// document.write(
-//   '' +
-//     'Browser name  = ' +
-//     objbrowserName +
-//     '<br>' +
-//     // 'Full version  = ' +
-//     // objfullVersion +
-//     // '<br>' +
-//     'Major version = ' +
-//     objBrMajorVersion
-//   // '<br>' +
-//   // 'navigator.appName = ' +
-//   // navigator.appName +
-//   // '<br>' +
-//   // 'navigator.userAgent = ' +
-//   // navigator.userAgent +
-//   // '<br>'
-// );
+
